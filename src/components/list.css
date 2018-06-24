@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+    border-color:green;
+    border-width: 2px;
+}
+
+th {
+    height: 50px;
+    background: yellow;
+    border-color: green;
+    border-width: 5px;
+}
+
+.rw-details {
+    background: cyan;
+}
+
+.mybutton, .mybutton:active, .mybutton:focus, .mybutton:hover, .mybutton::selection{
+    background: transparent;
+    border-color: transparent;
+    border-width: 0px;
+    width: 100px;
+    outline: 0px;
+    color: blue;
+    font-size: 25px;
+}

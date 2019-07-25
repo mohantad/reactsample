@@ -9,6 +9,9 @@
   "rules": {
         "no-var-requires": false,
         "no-console": false,
-        "max-classes-per-file": [false, 1]
+        "max-classes-per-file": [false, 1],
+        "jsx-no-lambda": false,
+        "ordered-imports": [false],
+        "object-literal-sort-keys": [false]
     }
 }

@@ -1,0 +1,40 @@
+.mycalendar-container{
+    width: 300px;
+}
+
+.mycalendar-header-year{
+    max-width: 70px;
+    font-size: 12pt;
+}
+
+.mycalendar-cell-regular{
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    padding-top: 4px; 
+    text-align: center;
+    position: relative;
+}
+.mycalendar-cell-today{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(230, 230, 40);
+    border-radius: 50%;
+    display: inline-block;
+    padding-top: 4px; 
+    text-align: center;
+    position: relative;
+}
+.mycalendar-cell-data{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(192, 238, 252);
+    border-radius: 50%;
+    display: inline-block;
+    padding-top: 4px; 
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}

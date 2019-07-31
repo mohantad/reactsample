@@ -93,7 +93,7 @@ export default class MyCalendar extends React.Component {
                 <br /><hr/><br />
                 &emsp;&emsp;<div className='tag-tooltip'>
                     Hover Tool Tip Sample
-  <div className='tag-tooltip-text'>
+  <div className='tag-tooltip-text resizable'>
                         <table>
                             <tbody>
                                 <tr>

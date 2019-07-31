@@ -69,3 +69,7 @@
     visibility: visible;
   }
   
+  .resizable{
+    resize: both;
+    overflow: auto;
+  }

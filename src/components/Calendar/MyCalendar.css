@@ -38,3 +38,34 @@
     position: relative;
     cursor: pointer;
 }
+
+
+
+.tag-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: cell;
+  }
+  .tag-tooltip-text{
+    position: absolute;
+  }
+  .tag-tooltip .tag-tooltip-text {
+    width: 200px;
+    height:50px;
+    visibility: hidden;
+    background-color:lightgray;
+    color: #000;
+    font-size: 9pt;
+    text-align: left;
+    border-radius: 8px; 
+    border-color:gray;
+    border-style: solid;
+    padding: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 2;
+  }
+  .tag-tooltip:hover .tag-tooltip-text {
+    visibility: visible;
+  }
+  

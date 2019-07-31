@@ -90,6 +90,40 @@ export default class MyCalendar extends React.Component {
                         {this.getAllCells()}
                     </tbody>
                 </table>
+                <br /><hr/><br />
+                &emsp;&emsp;<div className='tag-tooltip'>
+                    Hover Tool Tip Sample
+  <div className='tag-tooltip-text'>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Parent:
+                </td>
+                                    <td>
+                                        [root]
+                </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Owners:
+                </td>
+                                    <td>
+                                        [People], [ITEC]
+                </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Rule:
+                </td>
+                                    <td>
+                                        Rule:xyx@jdjkd.com, jdkd@jkd.com
+                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         );
     }

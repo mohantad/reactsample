@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 // import logo from './logo.svg';
@@ -27,7 +28,8 @@ class App extends React.Component {
         <Route  path='/FileViewerSample' component={FileViewerSample}/>
         <Route  path='/GoogleDocViewerSample' component={GoogleDocViewerSample}/>
         <Route  path='/Calendar' component={CalendarSample}/>
-        <Route  path='/' component={ButtonSample}/>
+        <Route  path='/' component={CalendarSample}/>
+        <Route  path='*' component={CalendarSample}/>
       </Switch>
     );
   }

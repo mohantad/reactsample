@@ -1,9 +1,14 @@
 import * as React from 'react';
 import * as moment from 'moment-timezone';
-import './MyCalendar.css';
+import  './MyCalendar.css';
 
 const asOfDateArr: string[] =['2019-07-05', '2019-07-15', '2019-07-19'];
-export default class MyCalendar extends React.Component {
+
+export interface IMyCalendarProps {
+    SelectDate:(dtSelected:string)=>void;
+  }
+
+export default class MyCalendar extends React.Component<IMyCalendarProps> {
     public state = {
         dateContext: moment(),
         yearEditVisible: false
@@ -90,40 +95,6 @@ export default class MyCalendar extends React.Component {
                         {this.getAllCells()}
                     </tbody>
                 </table>
-                <br /><hr/><br />
-                &emsp;&emsp;<div className='tag-tooltip'>
-                    Hover Tool Tip Sample
-  <div className='tag-tooltip-text resizable'>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Parent:
-                </td>
-                                    <td>
-                                        [root]
-                </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Owners:
-                </td>
-                                    <td>
-                                        [People], [ITEC]
-                </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Rule:
-                </td>
-                                    <td>
-                                        Rule:xyx@jdjkd.com, jdkd@jkd.com
-                </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         );
     }
@@ -145,21 +116,24 @@ export default class MyCalendar extends React.Component {
     }
 
     private getCellCSS = (d:any) =>{
-        console.log('getCellCSS =', d, moment().format('YYYY-MM-DD'));
+        // console.log('getCellCSS =', d, moment().format('YYYY-MM-DD'));
         let css: string = 'mycalendar-cell-regular';
         if(d === moment().format('YYYY-MM-DD')){
             css='mycalendar-cell-today';
         } else if (this.hasData(d)){
             css='mycalendar-cell-data';
+        }else{
+            css='mycalendar-cell-default';
         }
         return css;
     }
 
     private processData = (d: any) =>{
+        this.props.SelectDate(d);
         if (!this.hasData(d)){
            return;
         }
-        alert('process data for '+ d );
+        
     }
 
     private getDays = () => {

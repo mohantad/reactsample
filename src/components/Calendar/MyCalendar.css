@@ -39,6 +39,10 @@
     cursor: pointer;
 }
 
+.mycalendar-cell-default{
+    cursor: pointer;
+}
+
 
 
 .tag-tooltip {

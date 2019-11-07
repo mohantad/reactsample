@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 // import FileViewer from 'react-file-viewer';
 
 
@@ -11,8 +12,8 @@ const FileViewer = require("react-file-viewer");
 
 
 class FileViewerSample extends React.Component {
-private file = '../docs/passport 1.jpg';
-private type = 'jpg';
+private file = './docs/test.ppt';
+private type = 'ppt';
 
 // private file = '../docs/Doc1.docx';
 // private type = 'docx';
@@ -21,7 +22,7 @@ private type = 'jpg';
 // private type = 'pdf';
 
 public onError(e:any) {
-    console.log(e);
+    console.log('error in file-viewer', e);
   }
 
 public render() {
@@ -33,8 +34,8 @@ public render() {
         <FileViewer
         fileType={this.type}
         filePath={this.file}
-        // errorComponent={CustomErrorComponent}
         onError={this.onError}
+        className='resizable'
         />
         
       </div>

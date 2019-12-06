@@ -15,7 +15,7 @@ export interface ICustomPaginationState {
     pgGroupStart: number;
     pgGroupEnd: number;
 }
-export default class CustomPagination extends React.Component<ICustomPaginationProps, ICustomPaginationState>{
+export class CustomPagination extends React.Component<ICustomPaginationProps, ICustomPaginationState>{
     constructor(props: ICustomPaginationProps) { // ️⚡️ does not compile in strict mode
         super(props);
         this.state = {
@@ -34,6 +34,18 @@ export default class CustomPagination extends React.Component<ICustomPaginationP
         }
         this.setState({pages});
     }
+
+    public componentWillReceiveProps(nextProps: ICustomPaginationProps){
+        if(this.props.totalItems !== nextProps.totalItems){
+            const pages = [];
+            const pgTotal = Math.ceil(nextProps.totalItems / this.props.pgSize);
+            for (let i = 1; i <= pgTotal; i++) {
+                pages.push(i);
+            }
+            this.setState({pages});
+        }
+    }
+    
 
     public onChangePage = (dir: string) => {
         const pgTotal = Math.ceil(this.props.totalItems / this.props.pgSize);
@@ -78,7 +90,7 @@ export default class CustomPagination extends React.Component<ICustomPaginationP
     public rearrangePageGroup = () =>{
         const pgGroupCurrent = Math.ceil(this.state.pgCurrent / this.props.pgGroupSize)
         const pgGroupStart = (pgGroupCurrent-1) * this.props.pgGroupSize;
-        const pgGroupEnd = pgGroupStart + this.props.pgGroupSize;
+        const pgGroupEnd = pgGroupCurrent * this.props.pgGroupSize;
         this.setState({pgGroupStart, pgGroupEnd, pgGroupCurrent});
         this.props.onChangePage(this.state.pgCurrent);
     }

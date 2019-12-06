@@ -6,7 +6,7 @@ import { Button, Popover,
 import '../App.css';
 import Header from './header';
 import MyCalendar from './Calendar/MyCalendar';
-import CustomPagination from './CustomPagination';
+import { CustomPagination } from './CustomPagination';
 
 
 export interface ICalendarSampleProps
